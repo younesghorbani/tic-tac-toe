@@ -7,16 +7,98 @@
 }
 
 body {
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    font-weight: bold;
+    background-color: #22235f;
+    color: #e9e9ef;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input,
 button {
+    width: 100%;
     font-family: inherit;
+    font-size: 87.5%;
+    color: #22235f;
+}
+
+input {
+    padding: .5rem .625rem;
+    border: none;
+    border-radius: .3125rem;
+    transition: outline .2s ease;
+}
+
+input:hover {
+    outline: 2px solid #6FC7E1;
+}
+
+input:focus {
+    outline: 2px solid #6FC7E1;
 }
 
 button {
+    font-weight: inherit;
+    background-color: #e2eb68;
+    padding: .625rem;
     text-transform: inherit;
+    box-shadow: 0px 5px #b5bc53;
+    border: none;
+    border-radius: .625rem;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+.container {
+    padding: .9375rem;
+}
+
+.players {
+    background-color: #38396f;
+    padding: .9375rem .9375rem 1.25rem;
+    border-radius: .625rem;
+}
+
+.players p {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.players button {
+    margin-top: 2.5rem;
+}
+
+.first-player {
+    margin-bottom: .9375rem;
+}
+
+.first-player > div,
+.second-player > div {
+    display: flex;
+    align-items: center;
+    column-gap: .3125rem;
+}
+
+.first-player span {
+    color: #a8dacd;
+}
+
+.second-player span {
+    color: #eb68a0;
+}
+
+.first-player label,
+.second-player label {
+    font-size: 62.5%;
+    letter-spacing: 1px;
 }
