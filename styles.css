@@ -102,3 +102,73 @@ button:active {
     font-size: 62.5%;
     letter-spacing: 1px;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main .next {
+    width: 4rem;
+    height: 1.5rem;
+    background-color: #38396f;
+    margin-bottom: .3125rem;
+    border-radius: .3125rem;
+    line-height: .5;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.next span:first-child {
+    font-size: 62.5%;
+    letter-spacing: 1px;
+}
+
+main .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 5.3125rem);
+    grid-template-rows: repeat(3, 5.3125rem);
+    gap: .9375rem;
+}
+
+.game-board .cell {
+    font-size: 375%;
+    background-color: #38396f;
+    border-radius: .625rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .options {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.options > div {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #38396f;
+    border-radius: 50%;
+    transition: background-color .2s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options > div:hover {
+    background-color: #4e4f7f;
+}
+
+.options img {
+    width: 1.875rem;
+}
+
+.hidden {
+    display: none;
+}
