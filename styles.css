@@ -7,6 +7,7 @@
 }
 
 body {
+    position: relative;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -50,6 +51,7 @@ button {
     box-shadow: 0px 5px #b5bc53;
     border: none;
     border-radius: .625rem;
+    letter-spacing: 1px;
     cursor: pointer;
 }
 
@@ -89,11 +91,13 @@ button:active {
     column-gap: .3125rem;
 }
 
-.first-player span {
+.first-player span,
+.first-player-name {
     color: #a8dacd;
 }
 
-.second-player span {
+.second-player span,
+.second-player-name {
     color: #eb68a0;
 }
 
@@ -167,6 +171,91 @@ main .options {
 
 .options img {
     width: 1.875rem;
+}
+
+/* Modal & Overlay Styles */
+
+.modal {
+    position: absolute;
+    width: 100vw;
+    background-color: #38396f;
+    padding: 15px 15px 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.modal button {
+    width: fit-content;
+}
+
+.winner-modal {
+    height: 150px;
+}
+
+.winner-modal .message {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.message .winner-mark {
+    font-size: 32px;
+    line-height: .9;
+}
+
+.message .winner-name {
+    font-size: 18px;
+}
+
+.winner-modal .btns {
+    display: flex;
+    column-gap: 15px;
+}
+
+.btns .quit {
+    background-color: #e9e9ef;
+    box-shadow: 0px 5px #bababf;
+}
+
+.btns .quit:active {
+    box-shadow: none;
+}
+
+.stats-modal {
+    height: 200px;
+}
+
+.stats-modal .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 5px;
+}
+
+.stats .first-player-name,
+.stats .second-player-name,
+.stats .ties {
+    letter-spacing: 1px;
+    justify-self: end;
+}
+
+.stats .first-player-name,
+.stats .second-player-name {
+    text-transform: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(1px);
+    z-index: 1;
 }
 
 .hidden {
