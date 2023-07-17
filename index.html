@@ -40,15 +40,40 @@
             </div>
             <section class="game-board"></section>
             <section class="options">
-                <div class="refresh">
+                <div class="refresh-btn">
                     <img src="images/refresh.svg" alt="Refresh">
                 </div>
-                <div class="results">
-                    <img src="images/format-list-bulleted.svg" alt="Results">
+                <div class="stats-btn">
+                    <img src="images/format-list-bulleted.svg" alt="Stats">
                 </div>
             </section>
         </main>
     </section>
+
+    <div class="modal stats-modal hidden">
+        <div class="stats">
+            <span class="first-player-name">Foo:</span>
+            <span class="first-player-score"></span>
+            <span class="second-player-name">Bar:</span>
+            <span class="second-player-score"></span>
+            <span class="ties">Ties:</span>
+            <span></span>
+        </div>
+        <button>Ok</button>
+    </div>
+
+    <div class="modal winner-modal hidden">
+        <div class="message">
+            <span class="winner-mark">🞮</span>
+            <span class="winner-name">Foo Won!</span>
+        </div>
+        <div class="btns">
+            <button class="quit">Quit</button>
+            <button class="next-round">Next Round</button>
+        </div>
+    </div>
+
+    <div class="overlay hidden"></div>
 
     <script src="script.js"></script>
 </body>
