@@ -107,16 +107,16 @@ button:active {
     letter-spacing: 1px;
 }
 
-main {
+.deck {
     display: flex;
     flex-direction: column;
 }
 
-main .next {
+.deck .next {
     width: 4rem;
     height: 1.5rem;
     background-color: #38396f;
-    margin-bottom: .3125rem;
+    margin-bottom: .5rem;
     border-radius: .3125rem;
     line-height: .5;
     align-self: center;
@@ -128,6 +128,10 @@ main .next {
 .next span:first-child {
     font-size: 62.5%;
     letter-spacing: 1px;
+}
+
+.next span:last-child {
+    width: .875rem;
 }
 
 main .game-board {
@@ -148,9 +152,9 @@ main .game-board {
 }
 
 main .options {
-    margin-top: 1.25rem;
+    margin-top: .9375rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .options > div {
@@ -179,7 +183,7 @@ main .options {
     position: absolute;
     width: 100vw;
     background-color: #38396f;
-    padding: 15px 15px 20px;
+    padding: .9375rem .9375rem 1.25rem;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -191,33 +195,33 @@ main .options {
     width: fit-content;
 }
 
-.winner-modal {
-    height: 150px;
+.result-modal {
+    height: 9.375rem;
 }
 
-.winner-modal .message {
+.result-modal .message {
     display: flex;
     align-items: center;
-    column-gap: 5px;
+    column-gap: .3125rem;
 }
 
 .message .winner-mark {
-    font-size: 32px;
+    font-size: 200%;
     line-height: .9;
 }
 
 .message .winner-name {
-    font-size: 18px;
+    font-size: 112.5%;
 }
 
-.winner-modal .btns {
+.result-modal .btns {
     display: flex;
-    column-gap: 15px;
+    column-gap: .9375rem;
 }
 
 .btns .quit {
-    background-color: #e9e9ef;
-    box-shadow: 0px 5px #bababf;
+    background-color: #e2eb68;
+    box-shadow: 0px 5px #b5bc53;
 }
 
 .btns .quit:active {
@@ -225,14 +229,14 @@ main .options {
 }
 
 .stats-modal {
-    height: 200px;
+    height: 12.5rem;
 }
 
 .stats-modal .stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    column-gap: 5px;
+    column-gap: .3125rem;
 }
 
 .stats .first-player-name,
@@ -260,4 +264,8 @@ main .options {
 
 .hidden {
     display: none;
+}
+
+.locked {
+    pointer-events: none;
 }
