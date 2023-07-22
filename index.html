@@ -8,7 +8,7 @@
 </head>
 <body>
     <section class="container">
-        <section class="players hidden">
+        <section class="players">
             <p>Let's play Tic Tac Toe</p>
             <div class="first-player">
                 <div>
@@ -33,10 +33,10 @@
             <button>Start</button>
         </section>
 
-        <main>
+        <main class="deck hidden">
             <div class="next">
                 <span>Next:</span>
-                <span class="next-mark">🞉</span>
+                <span class="next-mark"></span>
             </div>
             <section class="game-board"></section>
             <section class="options">
@@ -45,6 +45,9 @@
                 </div>
                 <div class="stats-btn">
                     <img src="images/format-list-bulleted.svg" alt="Stats">
+                </div>
+                <div class="back-btn">
+                    <img src="images/chevron-left.svg" alt="Back">
                 </div>
             </section>
         </main>
@@ -62,14 +65,13 @@
         <button>Ok</button>
     </div>
 
-    <div class="modal winner-modal hidden">
+    <div class="modal result-modal hidden">
         <div class="message">
             <span class="winner-mark">🞮</span>
             <span class="winner-name">Foo Won!</span>
         </div>
         <div class="btns">
             <button class="quit">Quit</button>
-            <button class="next-round">Next Round</button>
         </div>
     </div>
 
