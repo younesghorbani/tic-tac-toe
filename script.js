@@ -15,6 +15,28 @@ const createPlayer = (name, mark, color) => {
 const firstPlayer = createPlayer('', '🞮', '#a8dacd');
 const secondPlayer = createPlayer('', '🞉', '#eb68a0');
 
+const scores = (() => {
+    let firstPlayerScore = secondPlayerScore = numberOfTies = 0;
+
+    const increaseFirstPlayerScore = () => firstPlayerScore += 1;
+    const increaseSecondPlayerScore = () => secondPlayerScore += 1;
+    const increaseNumberOfTies = () => numberOfTies += 1;
+    const returnFirstPlayerScore = () => firstPlayerScore;
+    const returnSecondPlayerScore = () => secondPlayerScore;
+    const returnNumberOfTies = () => numberOfTies;
+    const reset = () => firstPlayerScore = secondPlayerScore = numberOfTies = 0;
+
+    return {
+        increaseFirstPlayerScore,
+        increaseSecondPlayerScore,
+        increaseNumberOfTies,
+        returnFirstPlayerScore,
+        returnSecondPlayerScore,
+        returnNumberOfTies,
+        reset
+    };
+})();
+
 const game = (() => {
     let currentMark = nextMark = color = '';
 
