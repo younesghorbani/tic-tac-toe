@@ -37,6 +37,86 @@ const scores = (() => {
     };
 })();
 
+const actions = (() => {
+    const displayStats = () => {
+        const firstPlayerName = document.querySelector('.first-player-name');
+        const firstPlayerScore = document.querySelector('.first-player-score');
+        const secondPlayerName = document.querySelector('.second-player-name');
+        const secondPlayerScore = document.querySelector('.second-player-score');
+        const numberOfTies = document.querySelector('.stats > span:last-child');
+    
+        firstPlayerName.textContent = firstPlayer.name + ':';
+        firstPlayerScore.textContent = scores.returnFirstPlayerScore();
+        secondPlayerName.textContent = secondPlayer.name + ':';
+        secondPlayerScore.textContent = scores.returnSecondPlayerScore();
+        numberOfTies.textContent = scores.returnNumberOfTies();
+        
+        const overlay = document.querySelector('.overlay');
+        const statsModal = document.querySelector('.stats-modal');
+
+        overlay.classList.remove('hidden');
+        statsModal.classList.remove('hidden');
+    };
+
+    const hideStats = () => {
+        const statsModal = document.querySelector('.stats-modal');
+        const overlay = document.querySelector('.overlay');
+
+        statsModal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    };
+
+    const displayFinalResult = (winner, mark, color) => {
+        if (winner !== 'none') {
+            const winnerMark = document.querySelector('.winner-mark');
+            const winnerName = document.querySelector('.winner-name');
+            winnerMark.style.color = color;
+            winnerMark.textContent = mark;
+            winnerName.textContent = `${winner} WON!`;
+        } else {
+            const message = document.querySelector('.message');
+            let content = message.lastElementChild;
+            while (content) {
+                message.removeChild(content);
+                content = message.lastElementChild;
+            }
+
+            message.textContent = `IT'S A TIE!`;
+        }
+
+        const overlay = document.querySelector('.overlay');
+        const resultModal = document.querySelector('.result-modal');
+        
+        overlay.classList.remove('hidden');
+        resultModal.classList.remove('hidden');
+    };
+
+    const hideFinalResult = () => {
+        const resultModal = document.querySelector('.result-modal');
+        const overlay = document.querySelector('.overlay');
+
+        resultModal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    };
+
+    const goBack = () => {
+        const gameDeck = document.querySelector('.deck');
+        const playersForm = document.querySelector('.players');
+
+        gameDeck.classList.add('hidden');
+        playersForm.classList.remove('hidden');
+
+    };
+
+    return {
+        displayStats,
+        hideStats,
+        displayFinalResult,
+        hideFinalResult,
+        goBack
+    };
+})();
+
 const game = (() => {
     let currentMark = nextMark = color = '';
 
